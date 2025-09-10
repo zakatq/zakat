@@ -34,15 +34,15 @@
     }
 
     .category {
-      background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Farbverlauf */
+      background: linear-gradient(145deg, #ffffff, #e0e0e0);
       color: #333;
       border-radius: 12px;
       padding: 20px;
       width: 300px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 1; /* sofort sichtbar */
-      transform: translateY(0); /* keine Scroll-Animation nötig */
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .category img {
@@ -64,19 +64,24 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     }
 
+    /* Moderne Spenden-Buttons */
     a button {
-      background: #d4a373;
+      background: linear-gradient(135deg, #d4a373, #f0c27b);
       border: none;
       padding: 15px 30px;
       font-size: 18px;
       border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s ease;
+      color: #013220;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
     a button:hover {
-      background: #b5835a;
-      transform: scale(1.05);
+      background: linear-gradient(135deg, #f0c27b, #d4a373);
+      transform: scale(1.08);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.3);
     }
 
     .note {
@@ -92,6 +97,7 @@
       margin-top: 40px;
       padding: 20px;
       background: #222;
+      color: #fff;
     }
 
     footer a {
@@ -100,16 +106,28 @@
       font-weight: bold;
     }
 
+    /* Kontaktbereich */
+    .contact {
+      margin-top: 20px;
+      padding: 20px;
+      background: #111;
+      color: #fff;
+      border-radius: 12px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* Responsive Design */
     @media screen and (max-width: 900px) {
       .category {
-        width: 45%; /* 2 Karten nebeneinander */
+        width: 45%;
       }
     }
 
     @media screen and (max-width: 600px) {
       .category {
-        width: 90%; /* 1 Karte pro Reihe */
+        width: 90%;
       }
       a button {
         width: 80%;
@@ -186,9 +204,13 @@
     <p><b>Hinweis:</b> Wir nehmen kein Geld selbst. Diese Seite zeigt nur eine Übersicht über Menschen, Tiere und Projekte, die Hilfe benötigen.</p>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer & Kontakt -->
   <footer>
-    <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
+    <div class="contact">
+      <p><b>Kontakt:</b></p>
+      <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
+      <p>Für Fragen oder weitere Hilfe: <a href="mailto:muslim.zakat21@gmail.com">muslim.zakat21@gmail.com</a></p>
+    </div>
   </footer>
 </body>
 </html>
