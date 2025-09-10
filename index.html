@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Zakat – Hilfe leisten</title>
+  <!-- Font Awesome für Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #013220; /* dunkelgrün */
+      background: #013220;
       color: #fff;
       margin: 0;
       padding: 0;
@@ -23,20 +25,27 @@
     /* Container für alle Kategorien */
     .categories-container {
       display: flex;
-      flex-wrap: wrap;       
-      justify-content: center; 
-      gap: 20px;             
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
       padding: 20px;
     }
 
     .category {
-      background: #fff;
+      background: linear-gradient(145deg, #fff, #f0f0f0);
       color: #333;
       border-radius: 12px;
       padding: 20px;
       width: 300px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, transform 0.5s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .category.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .category img {
@@ -45,8 +54,12 @@
     }
 
     .category h2 {
-      margin-top: 15px;
-      font-size: 1.5em;
+      margin-top: 10px;
+      font-size: 1.8em;
+    }
+
+    .category p {
+      font-size: 1.1em;
     }
 
     .category:hover {
@@ -66,6 +79,7 @@
 
     a button:hover {
       background: #b5835a;
+      transform: scale(1.05);
     }
 
     .note {
@@ -91,13 +105,17 @@
     /* Responsive Design */
     @media screen and (max-width: 900px) {
       .category {
-        width: 45%; /* 2 Karten nebeneinander */
+        width: 45%;
       }
     }
 
     @media screen and (max-width: 600px) {
       .category {
-        width: 90%; /* 1 Karte pro Reihe */
+        width: 90%;
+      }
+      a button {
+        width: 80%;
+        padding: 15px 0;
       }
     }
   </style>
@@ -111,6 +129,7 @@
   <div class="categories-container">
     <!-- Kategorie: Kinder -->
     <div class="category">
+      <i class="fas fa-child fa-2x"></i>
       <img src="kinder.jpg" alt="Verletzte Kinder">
       <h2>Kinder in Not</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -118,6 +137,7 @@
 
     <!-- Kategorie: Tiere -->
     <div class="category">
+      <i class="fas fa-paw fa-2x"></i>
       <img src="tiere.jpg" alt="Verletzte Tiere">
       <h2>Tiere in Not</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -125,6 +145,7 @@
 
     <!-- Kategorie: Menschen -->
     <div class="category">
+      <i class="fas fa-hands-helping fa-2x"></i>
       <img src="menschen.jpg" alt="Menschen in Not">
       <h2>Menschen in Not</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -132,6 +153,7 @@
 
     <!-- Kategorie: Länder in Not -->
     <div class="category">
+      <i class="fas fa-globe fa-2x"></i>
       <img src="laender.jpg" alt="Länder in Not">
       <h2>Länder in Not</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -139,6 +161,7 @@
 
     <!-- Kategorie: Brunnen bauen -->
     <div class="category">
+      <i class="fas fa-faucet fa-2x"></i>
       <img src="brunnen.jpg" alt="Brunnen bauen">
       <h2>Brunnen bauen</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -146,6 +169,7 @@
 
     <!-- Kategorie: Moscheen bauen -->
     <div class="category">
+      <i class="fas fa-mosque fa-2x"></i>
       <img src="moschee.jpg" alt="Moscheen bauen">
       <h2>Moscheen bauen</h2>
       <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
@@ -161,5 +185,19 @@
   <footer>
     <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
   </footer>
+
+  <!-- Sanfte Animation beim Scrollen -->
+  <script>
+    const categories = document.querySelectorAll('.category');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    categories.forEach(cat => observer.observe(cat));
+  </script>
 </body>
 </html>
