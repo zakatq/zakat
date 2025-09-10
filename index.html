@@ -2,215 +2,172 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Zakat – Hilfe leisten</title>
-  <!-- Kostenlose Font Awesome Einbindung -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat – Hilfe für Bedürftige</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #013220;
+      background-color: #013220; /* dunkelgrün */
       color: #fff;
       margin: 0;
       padding: 0;
-      text-align: center;
     }
 
     header {
-      padding: 20px;
+      text-align: center;
+      padding: 30px;
+      background-color: #014d2b;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
       font-size: 2.5em;
     }
 
-    /* Container für alle Kategorien */
-    .categories-container {
+    .categories {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
       padding: 20px;
+      gap: 20px;
     }
 
     .category {
-      background: linear-gradient(145deg, #ffffff, #e0e0e0);
-      color: #333;
-      border-radius: 12px;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background-color: #02633a;
+      width: 280px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .category img {
-      max-width: 100%;
-      border-radius: 12px;
-    }
-
-    .category h2 {
-      margin-top: 10px;
-      font-size: 1.8em;
-    }
-
-    .category p {
-      font-size: 1.1em;
+      text-align: center;
     }
 
     .category:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
     }
 
-    /* Moderne Spenden-Buttons */
-    a button {
-      background: linear-gradient(135deg, #d4a373, #f0c27b);
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    .category img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .category h2 {
+      margin: 10px 0;
+      font-size: 1.3em;
+    }
+
+    .category a button {
+      background-color: #ffffff;
       color: #013220;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      padding: 10px 20px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    a button:hover {
-      background: linear-gradient(135deg, #f0c27b, #d4a373);
-      transform: scale(1.08);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+    .category a button:hover {
+      background-color: #013220;
+      color: #ffffff;
     }
 
-    .note {
-      margin: 40px auto;
-      max-width: 700px;
-      padding: 15px;
-      background: #fff;
-      color: #333;
-      border-radius: 12px;
+    .hinweis {
+      background-color: #004d00;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .hinweis p {
+      margin: 10px 0;
+      font-size: 1.1em;
+      line-height: 1.4em;
     }
 
     footer {
-      margin-top: 40px;
+      background-color: #014d2b;
+      text-align: center;
       padding: 20px;
-      background: #222;
-      color: #fff;
+    }
+
+    footer p {
+      margin: 5px 0;
     }
 
     footer a {
-      color: #90ee90;
-      text-decoration: none;
-      font-weight: bold;
+      color: #ffffff;
+      text-decoration: underline;
     }
 
-    /* Kontaktbereich */
-    .contact {
-      margin-top: 20px;
-      padding: 20px;
-      background: #111;
-      color: #fff;
-      border-radius: 12px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* Responsive Design */
-    @media screen and (max-width: 900px) {
-      .category {
-        width: 45%;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
+    @media (max-width: 600px) {
       .category {
         width: 90%;
       }
-      a button {
-        width: 80%;
-        padding: 15px 0;
-      }
-    }
-
-    /* Icons oben zentrieren */
-    .category i {
-      display: block;
-      margin-bottom: 10px;
-      color: #013220;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Zakat – Hilfe leisten</h1>
-    <p>Eine Übersicht über Menschen, Tiere und Projekte, die Unterstützung brauchen.</p>
-  </header>
 
-  <div class="categories-container">
-    <!-- Kategorie: Kinder -->
-    <div class="category">
-      <i class="fas fa-child fa-2x"></i>
-      <img src="kinder.jpg" alt="Verletzte Kinder">
-      <h2>Kinder in Not</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
+<header>
+  <h1>Zakat – Gemeinsam helfen</h1>
+</header>
 
-    <!-- Kategorie: Tiere -->
-    <div class="category">
-      <i class="fas fa-paw fa-2x"></i>
-      <img src="tiere.jpg" alt="Verletzte Tiere">
-      <h2>Tiere in Not</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
-
-    <!-- Kategorie: Menschen -->
-    <div class="category">
-      <i class="fas fa-hands-helping fa-2x"></i>
-      <img src="menschen.jpg" alt="Menschen in Not">
-      <h2>Menschen in Not</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
-
-    <!-- Kategorie: Länder in Not -->
-    <div class="category">
-      <i class="fas fa-globe fa-2x"></i>
-      <img src="laender.jpg" alt="Länder in Not">
-      <h2>Länder in Not</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
-
-    <!-- Kategorie: Brunnen bauen -->
-    <div class="category">
-      <i class="fas fa-faucet fa-2x"></i>
-      <img src="brunnen.jpg" alt="Brunnen bauen">
-      <h2>Brunnen bauen</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
-
-    <!-- Kategorie: Moscheen bauen -->
-    <div class="category">
-      <i class="fas fa-mosque fa-2x"></i>
-      <img src="moschee.jpg" alt="Moscheen bauen">
-      <h2>Moscheen bauen</h2>
-      <p><a href="https://dein-spenden-link.de" target="_blank"><button>Jetzt spenden</button></a></p>
-    </div>
+<section class="categories">
+  <div class="category">
+    <img src="kinder.jpg" alt="Kinder in Not">
+    <h2>Kinder in Not</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
   </div>
 
-  <!-- Hinweis -->
-  <div class="note">
-    <p><b>Hinweis:</b> Wir nehmen kein Geld selbst. Diese Seite zeigt nur eine Übersicht über Menschen, Tiere und Projekte, die Hilfe benötigen.</p>
+  <div class="category">
+    <img src="tiere.jpg" alt="Tiere in Not">
+    <h2>Tiere in Not</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
   </div>
 
-  <!-- Footer & Kontakt -->
-  <footer>
-    <div class="contact">
-      <p><b>Kontakt:</b></p>
-      <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
-      <p>Für Fragen oder weitere Hilfe: <a href="mailto:muslim.zakat21@gmail.com">muslim.zakat21@gmail.com</a></p>
-    </div>
-  </footer>
+  <div class="category">
+    <img src="menschen.jpg" alt="Menschen in Not">
+    <h2>Menschen in Not</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
+  </div>
+
+  <div class="category">
+    <img src="laender.jpg" alt="Länder in Not">
+    <h2>Länder in Not</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
+  </div>
+
+  <div class="category">
+    <img src="brunnen.jpg" alt="Brunnen bauen">
+    <h2>Brunnen bauen</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
+  </div>
+
+  <div class="category">
+    <img src="moschee.jpg" alt="Moscheen bauen">
+    <h2>Moscheen bauen</h2>
+    <a href="LINK_ZU_SPENDE" target="_blank"><button>Jetzt spenden</button></a>
+  </div>
+</section>
+
+<section class="hinweis">
+  <p>Wir nehmen kein Geld selbst ein, sondern vermitteln nur Hilfsaktionen.</p>
+  <p><strong>Jeder Beitrag zählt – auch ein einzelner Euro kann Leben verändern. Wenn du nicht spenden kannst, hilf bitte mit, indem du diese Seite mit Freunden und Familie teilst. Gemeinsam erreichen wir mehr.</strong></p>
+</section>
+
+<footer>
+  <p><strong>Kontakt:</strong></p>
+  <p>Folg uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
+  <p>Für Fragen / weitere Hilfe: <a href="mailto:muslim.zakat21@gmail.com">muslim.zakat21@gmail.com</a></p>
+</footer>
+
 </body>
 </html>
