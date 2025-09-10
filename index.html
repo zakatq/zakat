@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Zakat – Hilfe leisten</title>
-  <!-- Font Awesome für Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Kostenlose Font Awesome Einbindung -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,9 +14,11 @@
       padding: 0;
       text-align: center;
     }
+
     header {
       padding: 20px;
     }
+
     h1 {
       margin: 0;
       font-size: 2.5em;
@@ -32,20 +34,15 @@
     }
 
     .category {
-      background: linear-gradient(145deg, #fff, #f0f0f0);
+      background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Farbverlauf */
       color: #333;
       border-radius: 12px;
       padding: 20px;
       width: 300px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, transform 0.5s;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .category.visible {
-      opacity: 1;
-      transform: translateY(0);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 1; /* sofort sichtbar */
+      transform: translateY(0); /* keine Scroll-Animation nötig */
     }
 
     .category img {
@@ -96,6 +93,7 @@
       padding: 20px;
       background: #222;
     }
+
     footer a {
       color: #90ee90;
       text-decoration: none;
@@ -105,18 +103,25 @@
     /* Responsive Design */
     @media screen and (max-width: 900px) {
       .category {
-        width: 45%;
+        width: 45%; /* 2 Karten nebeneinander */
       }
     }
 
     @media screen and (max-width: 600px) {
       .category {
-        width: 90%;
+        width: 90%; /* 1 Karte pro Reihe */
       }
       a button {
         width: 80%;
         padding: 15px 0;
       }
+    }
+
+    /* Icons oben zentrieren */
+    .category i {
+      display: block;
+      margin-bottom: 10px;
+      color: #013220;
     }
   </style>
 </head>
@@ -185,19 +190,5 @@
   <footer>
     <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@muslim.q21" target="_blank">@muslim.q21</a></p>
   </footer>
-
-  <!-- Sanfte Animation beim Scrollen -->
-  <script>
-    const categories = document.querySelectorAll('.category');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    categories.forEach(cat => observer.observe(cat));
-  </script>
 </body>
 </html>
