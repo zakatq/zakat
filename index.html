@@ -6,38 +6,98 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #fdf6e3;
-      color: #333;
+      background: #556b2f; /* olivgrün */
+      color: #fff;
+      margin: 0;
+      padding: 0;
       text-align: center;
+    }
+    header {
       padding: 20px;
     }
-    .card {
-      border: 1px solid #ccc;
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .category {
+      background: #fff;
+      color: #333;
       border-radius: 12px;
       margin: 20px auto;
-      padding: 15px;
-      max-width: 400px;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    img {
+    .category img {
       max-width: 100%;
       border-radius: 12px;
+    }
+    .category h2 {
+      margin-top: 15px;
+      font-size: 1.5em;
+    }
+    .note {
+      margin: 40px auto;
+      max-width: 700px;
+      padding: 15px;
+      background: #fff;
+      color: #333;
+      border-radius: 12px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #333;
+    }
+    footer a {
+      color: #d4edda;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Zakat – Hilfe leisten</h1>
-  <p>Spenden Sie für Kinder, Tiere und Menschen in Not.</p>
+  <header>
+    <h1>Zakat – Hilfe leisten</h1>
+    <p>Eine Übersicht über Menschen, Tiere und Projekte, die Unterstützung brauchen.</p>
+  </header>
 
-  <div class="card">
-    <img src="bild1.jpg" alt="Kind in Not">
-    <p>Kind in Not – <a href="https://spendenlink.de">Jetzt spenden</a></p>
+  <!-- Kategorie: Kinder -->
+  <div class="category">
+    <img src="kinder.jpg" alt="Verletzte Kinder">
+    <h2>Kinder in Not</h2>
+    <p><a href="https://dein-spenden-link.de" target="_blank">Jetzt spenden</a></p>
   </div>
 
-  <div class="card">
-    <img src="bild2.jpg" alt="Tier in Not">
-    <p>Tier in Not – <a href="https://spendenlink.de">Jetzt spenden</a></p>
+  <!-- Kategorie: Tiere -->
+  <div class="category">
+    <img src="tiere.jpg" alt="Verletzte Tiere">
+    <h2>Tiere in Not</h2>
+    <p><a href="https://dein-spenden-link.de" target="_blank">Jetzt spenden</a></p>
   </div>
+
+  <!-- Kategorie: Menschen -->
+  <div class="category">
+    <img src="menschen.jpg" alt="Menschen in Not">
+    <h2>Menschen in Not</h2>
+    <p><a href="https://dein-spenden-link.de" target="_blank">Jetzt spenden</a></p>
+  </div>
+
+  <!-- Kategorie: Brunnen und Moscheen -->
+  <div class="category">
+    <img src="projekte.jpg" alt="Brunnen und Moscheen">
+    <h2>Brunnen bauen & Moscheen unterstützen</h2>
+    <p><a href="https://dein-spenden-link.de" target="_blank">Jetzt spenden</a></p>
+  </div>
+
+  <!-- Hinweis -->
+  <div class="note">
+    <p><b>Hinweis:</b> Wir nehmen kein Geld selbst. Diese Seite zeigt nur eine Übersicht über Menschen, Tiere und Projekte, die Hilfe benötigen.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Folge uns auf TikTok: <a href="https://www.tiktok.com/@nuslim.q2" target="_blank">@nuslim.q2</a></p>
+  </footer>
 </body>
 </html>
