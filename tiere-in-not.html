@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiere in Not</title>
+<style>
+body {
+  background-color: #0b3d0b; /* dunkelgrün */
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+a.back {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 40px;
+}
+
+button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #e6c200;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tiere in Not</h1>
+  <a href="index.html" class="back">⬅ Zurück zur Startseite</a>
+</header>
+
+<div class="cards">
+  <!-- Thor -->
+  <div class="card">
+    <img src="thor.jpg" alt="Thor">
+    <h3>Thor</h3>
+    <p>Ich bin Thor, habe Epilepsie und kämpfe ums Überleben.</p>
+    <a href="https://www.gofundme.com/f/ggehc-hilfe-fur-thor-mein-kleiner-kampfer-mit-epilepsie" target="_blank">
+      <button>Jetzt spenden</button>
+    </a>
+  </div>
+
+  <!-- Luna -->
+  <div class="card">
+    <img src="luna.jpg" alt="Luna">
+    <h3>Luna</h3>
+    <p>Babykatze Luna leidet an Krebs und benötigt Hilfe.</p>
+    <a href="https://www.paypal.com/pools/c/9i7CdC4E9L" target="_blank">
+      <button>Jetzt spenden</button>
+    </a>
+  </div>
+
+  <!-- Straßentiere Türkei -->
+  <div class="card">
+    <img src="strassentiere_tuerkei.jpg" alt="Straßentiere Türkei">
+    <h3>Straßentiere Türkei</h3>
+    <p>Die Straßentiere in der Türkei benötigen eure Hilfe.</p>
+    <a href="https://www.paypal.com/paypalme/selviates?country.x=DE&locale.x=de_DE" target="_blank">
+      <button>Jetzt spenden</button>
+    </a>
+  </div>
+
+  <!-- Straßenhunde Rumänien -->
+  <div class="card">
+    <img src="hunde_rumaenien.jpg" alt="Straßenhunde Rumänien">
+    <h3>Straßenhunde Rumänien</h3>
+    <p>Millionen Straßenhunde in Rumänien kämpfen ums Überleben.</p>
+    <a href="https://www.happytails-brasov.org/kastrationskampagne/" target="_blank">
+      <button>Jetzt spenden</button>
+    </a>
+  </div>
+
+  <!-- Straßentiere Istanbul -->
+  <div class="card">
+    <img src="strassentiere_istanbul.jpg" alt="Straßentiere Istanbul">
+    <h3>Straßentiere Istanbul</h3>
+    <p>Tiere in Not auf den Straßen Istanbuls.</p>
+    <a href="https://www.paypal.com/paypalme/PawsOfTurkiye" target="_blank">
+      <button>Jetzt spenden</button>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
